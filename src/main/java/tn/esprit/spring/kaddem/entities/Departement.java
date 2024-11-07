@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.*;
-
+//entite
 @Entity
 public class Departement implements Serializable{
     @Id
