@@ -19,6 +19,7 @@ public class Departement implements Serializable{
     public Departement() {
         // TODO Auto-generated constructor stub
                 // TODO Auto-generated constructor stub
+                // TODO Auto-generated constructor stub
 
     }
 //guydjgsjqgdiqgds
