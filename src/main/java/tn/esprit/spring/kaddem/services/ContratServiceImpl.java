@@ -1,6 +1,5 @@
 package tn.esprit.spring.kaddem.services;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import lombok.extern.slf4j.Slf4j;
 import tn.esprit.spring.kaddem.entities.Contrat;
@@ -38,7 +37,7 @@ public class ContratServiceImpl implements IContratService{
 	public Contrat affectContratToEtudiant (Integer idContrat, String nomE, String prenomE){
 		Etudiant e=etudiantRepository.findByNomEAndPrenomE(nomE, prenomE);
 		Contrat ce=contratRepository.findByIdContrat(idContrat);
-		Set<Contrat> contrats= e.getContrats();
+		Set<Contrat> contrats= e.getContracts();
 		Integer nbContratssActifs=0;
 		if (contrats.size()!=0) {
 			for (Contrat contrat : contrats) {
