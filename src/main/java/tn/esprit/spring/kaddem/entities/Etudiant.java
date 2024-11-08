@@ -9,7 +9,7 @@ import java.util.Set;
 
 import javax.persistence.*;
 
-
+//test mail
 @SuppressWarnings("SpellCheckingInspection")
 @Entity
 public class Etudiant implements Serializable{
