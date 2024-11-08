@@ -25,8 +25,7 @@ class EtudiantServiceImplTest {
     @Mock
     private ContratRepository contratRepository;
 
-    @Mock
-    private EquipeRepository equipeRepository;
+
 
     @Mock
     private DepartementRepository departementRepository;
@@ -94,18 +93,5 @@ class EtudiantServiceImplTest {
         verify(etudiantRepository, times(1)).save(etudiant);
     }
 
-  /*  @Test
-    void testAddAndAssignEtudiantToEquipeAndContract() {
-        Contrat contrat = new Contrat();
-        Equipe equipe = new Equipe();
-        when(contratRepository.findById(1)).thenReturn(Optional.of(contrat));
-        when(equipeRepository.findById(1)).thenReturn(Optional.of(equipe));
-
-        Etudiant assignedEtudiant = etudiantService.addAndAssignEtudiantToEquipeAndContract(etudiant, 1, 1);
-
-        assertNotNull(assignedEtudiant);
-        assertEquals(etudiant, contrat.getEtudiant());
-        assertTrue(equipe.getEtudiants().contains(etudiant));
-        verify(etudiantRepository, never()).save(any(Etudiant.class)); // Save is not called on etudiantRepository directly
-    }*/
+  
 }
