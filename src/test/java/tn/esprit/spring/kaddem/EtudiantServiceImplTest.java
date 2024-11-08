@@ -1,5 +1,4 @@
 package tn.esprit.spring.kaddem;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -11,42 +10,29 @@ import tn.esprit.spring.kaddem.repositories.ContratRepository;
 import tn.esprit.spring.kaddem.repositories.DepartementRepository;
 import tn.esprit.spring.kaddem.repositories.EtudiantRepository;
 import tn.esprit.spring.kaddem.services.EtudiantServiceImpl;
-
 import java.util.Optional;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
 class EtudiantServiceImplTest {
-
     @Mock
     private EtudiantRepository etudiantRepository;
-
     @Mock
     private ContratRepository contratRepository;
-
-
-
     @Mock
     private DepartementRepository departementRepository;
-
     @InjectMocks
     private EtudiantServiceImpl etudiantService;
-
     private Etudiant etudiant;
-
     @BeforeEach
     void setUp() {
         MockitoAnnotations.openMocks(this);
         etudiant = new Etudiant("John", "Doe");
     }
-
     @Test
     void testRetrieveAllEtudiants() {
         etudiantService.retrieveAllEtudiants();
         verify(etudiantRepository, times(1)).findAll();
     }
-
     @Test
     void testAddEtudiant() {
         when(etudiantRepository.save(etudiant)).thenReturn(etudiant);
@@ -55,7 +41,6 @@ class EtudiantServiceImplTest {
         assertEquals("John", savedEtudiant.getNomE());
         verify(etudiantRepository, times(1)).save(etudiant);
     }
-
     @Test
     void testUpdateEtudiant() {
         when(etudiantRepository.save(etudiant)).thenReturn(etudiant);
@@ -64,7 +49,6 @@ class EtudiantServiceImplTest {
         assertEquals("John", updatedEtudiant.getNomE());
         verify(etudiantRepository, times(1)).save(etudiant);
     }
-
     @Test
     void testRetrieveEtudiant() {
         when(etudiantRepository.findById(1)).thenReturn(Optional.of(etudiant));
@@ -73,25 +57,19 @@ class EtudiantServiceImplTest {
         assertEquals("John", foundEtudiant.getNomE());
         verify(etudiantRepository, times(1)).findById(1);
     }
-
     @Test
     void testRemoveEtudiant() {
         when(etudiantRepository.findById(1)).thenReturn(Optional.of(etudiant));
         etudiantService.removeEtudiant(1);
         verify(etudiantRepository, times(1)).delete(etudiant);
     }
-
     @Test
     void testAssignEtudiantToDepartement() {
         Departement departement = new Departement();
         when(etudiantRepository.findById(1)).thenReturn(Optional.of(etudiant));
         when(departementRepository.findById(1)).thenReturn(Optional.of(departement));
-
         etudiantService.assignEtudiantToDepartement(1, 1);
-
         assertEquals(departement, etudiant.getDepartement());
         verify(etudiantRepository, times(1)).save(etudiant);
     }
-
-  
 }

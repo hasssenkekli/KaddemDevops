@@ -1,12 +1,8 @@
 package tn.esprit.spring.kaddem.entities;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.io.Serializable;
 import java.util.Set;
-
 import javax.persistence.*;
-//entite
 @Entity
 public class Departement implements Serializable{
     @Id
@@ -17,30 +13,22 @@ public class Departement implements Serializable{
     @JsonIgnore
     private Set<Etudiant> etudiants;
     public Departement() {
-        
     }
-//guydjgsjqgdiqgds
-//guydjgsjqgdiqgds
-
     public Departement(String nomDepart) {
         super();
         this.nomDepart = nomDepart;
     }
-
     public Departement(Integer idDepart, String nomDepart) {
         super();
         this.idDepart = idDepart;
         this.nomDepart = nomDepart;
     }
-
     public Set<Etudiant> getEtudiants() {
         return etudiants;
     }
-
     public void setEtudiants(Set<Etudiant> etudiants) {
         this.etudiants = etudiants;
     }
-
     public Integer getIdDepart() {
         return idDepart;
     }
@@ -53,5 +41,4 @@ public class Departement implements Serializable{
     public void setNomDepart(String nomDepart) {
         this.nomDepart = nomDepart;
     }
-
 }

@@ -1,12 +1,8 @@
 package tn.esprit.spring.kaddem.entities;
-
 import lombok.ToString;
-
 import java.io.Serializable;
 import java.util.Date;
-
 import javax.persistence.*;
-
 @Entity
 @ToString
 public class Contrat implements Serializable{
@@ -23,11 +19,9 @@ public class Contrat implements Serializable{
     private Integer montantContrat;
     @ManyToOne(cascade = CascadeType.ALL)
     private Etudiant etudiant;
-
     public Contrat() {
         // TODO Auto-generated constructor stub
     }
-
     public Contrat(Date dateDebutContrat, Date dateFinContrat, Specialite specialite, Boolean archive,
                    Integer montantContrat) {
         super();
@@ -37,7 +31,6 @@ public class Contrat implements Serializable{
         this.archive = archive;
         this.montantContrat = montantContrat;
     }
-
     public Contrat(Integer idContrat, Date dateDebutContrat, Date dateFinContrat, Specialite specialite,
                    Boolean archive, Integer montantContrat) {
         super();
@@ -48,7 +41,6 @@ public class Contrat implements Serializable{
         this.archive = archive;
         this.montantContrat = montantContrat;
     }
-
     public Integer getIdContrat() {
         return idContrat;
     }
@@ -85,14 +77,10 @@ public class Contrat implements Serializable{
     public void setMontantContrat(Integer montantContrat) {
         this.montantContrat = montantContrat;
     }
-
     public Etudiant getEtudiant() {
         return etudiant;
     }
-
     public void setEtudiant(Etudiant etudiant) {
         this.etudiant = etudiant;
     }
-
-
 }

@@ -1,16 +1,8 @@
 package tn.esprit.spring.kaddem.entities;
-
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.io.Serializable;
-import java.util.List;
 import java.util.Set;
-
 import javax.persistence.*;
-
-//test mail
-@SuppressWarnings("SpellCheckingInspection")
 @Entity
 public class Etudiant implements Serializable{
     @Id
@@ -30,19 +22,16 @@ public class Etudiant implements Serializable{
     public Etudiant() {
         // TODO Auto-generated constructor stub
     }
-
     public Etudiant(String nomE, String prenomE) {
         this.nomE = nomE;
         this.prenomE = prenomE;
     }
-
     public Etudiant(String nomE, String prenomE, Option op) {
         super();
         this.nomE = nomE;
         this.prenomE = prenomE;
         this.op = op;
     }
-
     public Etudiant(Integer idEtudiant, String nomE, String prenomE, Option op) {
         super();
         this.idEtudiant = idEtudiant;
@@ -50,23 +39,18 @@ public class Etudiant implements Serializable{
         this.prenomE = prenomE;
         this.op = op;
     }
-
     public Set<Contrat> getContrats() {
         return Contrats;
     }
-
     public void setContrats(Set<Contrat> contrats) {
         Contrats = contrats;
     }
-
     public Departement getDepartement() {
         return departement;
     }
-
     public void setDepartement(Departement departement) {
         this.departement = departement;
     }
-
     public Integer getIdEtudiant() {
         return idEtudiant;
     }
@@ -91,5 +75,4 @@ public class Etudiant implements Serializable{
     public void setOp(Option op) {
         this.op = op;
     }
-
 }
