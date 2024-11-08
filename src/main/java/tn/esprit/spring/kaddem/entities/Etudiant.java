@@ -30,4 +30,7 @@ public class Etudiant implements Serializable{
     public Etudiant() {
 
     }
+
+    public Etudiant(String nomE, String prenomE) {
+    }
 }
